@@ -5,7 +5,6 @@ import ru.tinkoff.edu.java.linkParser.records.StackOverflowInfo;
 import java.net.URL;
 
 public class StackOverflowHandler extends Handler {
-
     @Override
     public LinkInfo handleRequest(URL link) {
 
