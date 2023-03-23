@@ -9,7 +9,7 @@ public class StackOverflowHandler extends Handler {
     public LinkInfo handleRequest(String link) {
 
         if (!isStackOverflowLink(link)) {
-            if (getSuccessor() != null) { return getSuccessor().handleRequest(link); }
+            if (successor != null) { return successor.handleRequest(link); }
             return null;
         }
 

@@ -8,7 +8,7 @@ public class GitHubHandler extends Handler{
     public LinkInfo handleRequest(String link) {
 
         if (!isGithubLink(link)) {
-           if (getSuccessor() != null) { return getSuccessor().handleRequest(link); }
+           if (successor != null) { return successor.handleRequest(link); }
            return null;
         }
 
