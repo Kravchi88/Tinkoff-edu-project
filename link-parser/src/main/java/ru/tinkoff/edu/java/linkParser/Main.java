@@ -14,7 +14,7 @@ public class Main {
         Handler handler2 = new StackOverflowHandler();
 
         handler1.setSuccessor(handler2);
-        LinkInfo result = handler1.HandleRequest(link);
+        LinkInfo result = handler1.handleRequest(link);
         System.out.println(result);
 
     }

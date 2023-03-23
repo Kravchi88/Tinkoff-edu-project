@@ -5,7 +5,7 @@ import ru.tinkoff.edu.java.linkParser.records.LinkInfo;
 public abstract class Handler {
     private Handler successor;
 
-    public abstract LinkInfo HandleRequest(String link);
+    public abstract LinkInfo handleRequest(String link);
 
     public Handler getSuccessor() { return successor; }
 

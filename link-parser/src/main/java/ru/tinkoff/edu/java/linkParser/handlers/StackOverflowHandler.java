@@ -6,10 +6,10 @@ import ru.tinkoff.edu.java.linkParser.records.StackOverflowInfo;
 public class StackOverflowHandler extends Handler {
 
     @Override
-    public LinkInfo HandleRequest(String link) {
+    public LinkInfo handleRequest(String link) {
 
         if (!isStackOverflowLink(link)) {
-            if (getSuccessor() != null) { return getSuccessor().HandleRequest(link); }
+            if (getSuccessor() != null) { return getSuccessor().handleRequest(link); }
             return null;
         }
 

@@ -5,10 +5,10 @@ import ru.tinkoff.edu.java.linkParser.records.LinkInfo;
 
 public class GitHubHandler extends Handler{
     @Override
-    public LinkInfo HandleRequest(String link) {
+    public LinkInfo handleRequest(String link) {
 
         if (!isGithubLink(link)) {
-           if (getSuccessor() != null) { return getSuccessor().HandleRequest(link); }
+           if (getSuccessor() != null) { return getSuccessor().handleRequest(link); }
            return null;
         }
 
