@@ -23,7 +23,7 @@ public class StackOverflowHandler extends Handler {
         return link.getHost().equals("stackoverflow.com");
     }
 
-    private static boolean isAppropriateLinkFormat(URL link){
+    private static boolean isAppropriateLinkFormat(URL link) {
         String[] linkParts = link.getFile().split("/");
         if (linkParts.length < 3) { return false; }
         try {
@@ -34,7 +34,7 @@ public class StackOverflowHandler extends Handler {
         }
     }
 
-    private static int getQuestionId(URL link){
+    private static int getQuestionId(URL link) {
         String[] linkParts = link.getFile().split("/");
         return Integer.parseInt(linkParts[2]);
     }

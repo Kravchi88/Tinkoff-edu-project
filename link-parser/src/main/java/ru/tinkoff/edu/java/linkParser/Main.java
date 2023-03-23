@@ -4,7 +4,6 @@ import ru.tinkoff.edu.java.linkParser.handlers.GitHubHandler;
 import ru.tinkoff.edu.java.linkParser.handlers.Handler;
 import ru.tinkoff.edu.java.linkParser.handlers.StackOverflowHandler;
 import ru.tinkoff.edu.java.linkParser.records.LinkInfo;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 
