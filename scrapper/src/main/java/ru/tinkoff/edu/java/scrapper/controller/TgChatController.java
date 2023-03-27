@@ -1,9 +1,10 @@
 package ru.tinkoff.edu.java.scrapper.controller;
 
-import exceptions.ChatAlreadyExistsException;
-import exceptions.ChatNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.tinkoff.exceptions.ChatAlreadyExistsException;
+import org.tinkoff.exceptions.ChatNotFoundException;
+
 import java.util.HashSet;
 import java.util.Set;
 @RestController

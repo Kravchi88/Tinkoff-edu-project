@@ -12,6 +12,7 @@
         <module>bot</module>
         <module>link-parser</module>
         <module>scrapper</module>
+        <module>errors</module>
     </modules>
 
     <properties>
@@ -46,6 +47,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>

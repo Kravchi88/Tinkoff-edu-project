@@ -10,12 +10,14 @@
         <module name="scrapper" />
         <module name="link-parser" />
         <module name="bot" />
+        <module name="errors" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="bot" options="-parameters" />
+      <module name="errors" options="-parameters" />
       <module name="link-parser" options="-parameters" />
       <module name="scrapper" options="-parameters" />
     </option>

@@ -1,7 +1,8 @@
-package errorResponse;
+package org.tinkoff.errorResponse;
 
 import java.util.List;
-public record ApiErrorResponse(
+
+public record ApiErrorResponse (
         String description,
         String code,
         String exceptionName,

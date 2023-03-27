@@ -1,10 +1,10 @@
 package ru.tinkoff.edu.java.scrapper.controller;
 
-import exceptions.ChatNotFoundException;
-import exceptions.LinkAlreadyExistsException;
-import exceptions.LinkNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.tinkoff.exceptions.ChatNotFoundException;
+import org.tinkoff.exceptions.LinkAlreadyExistsException;
+import org.tinkoff.exceptions.LinkNotFoundException;
 import ru.tinkoff.edu.java.scrapper.dto.request.AddLinkRequest;
 import ru.tinkoff.edu.java.scrapper.dto.request.LinkRequest;
 import ru.tinkoff.edu.java.scrapper.dto.request.RemoveLinkRequest;
