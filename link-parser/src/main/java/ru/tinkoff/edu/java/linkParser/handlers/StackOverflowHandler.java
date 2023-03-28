@@ -33,8 +33,8 @@ public class StackOverflowHandler extends Handler {
         }
     }
 
-    private static int getQuestionId(URL link) {
+    private static long getQuestionId(URL link) {
         String[] linkParts = link.getFile().split("/");
-        return Integer.parseInt(linkParts[2]);
+        return Long.parseLong(linkParts[2]);
     }
 }

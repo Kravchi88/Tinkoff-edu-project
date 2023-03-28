@@ -1,5 +1,7 @@
 app:
   test: "something"
+  baseUrlGitHub: "https://api.github.com"
+  baseUrlStackOverflow: "https://api.stackexchange.com"
 
 springdoc:
   swagger-ui:
