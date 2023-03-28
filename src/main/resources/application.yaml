@@ -1,6 +1,0 @@
-app:
-  test: "something"
-
-springdoc:
-  swagger-ui:
-    path: "/swagger-ui.html"
