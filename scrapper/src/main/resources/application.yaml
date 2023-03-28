@@ -2,7 +2,9 @@ app:
   test: "something"
   baseUrlGitHub: "https://api.github.com"
   baseUrlStackOverflow: "https://api.stackexchange.com"
+  scheduler:
+    interval: 10000
 
 springdoc:
   swagger-ui:
-    path: "/swagger-ui.html"
+    path: "/swagger-ui"
