@@ -37,19 +37,18 @@ public class TinkoffEduBot extends LongPollingBot{
 
         long chatId = update.message().chat().id();
         bot.execute(new SendChatAction(chatId, ChatAction.typing));
+
+        if(update.message().replyToMessage() != null) {
+            handleRepliedMessage(update, chatId);
+            return;
+        }
         switch (update.message().text()) {
             case "/start" -> handleStart(chatId);
             case "/help" -> handleHelp(chatId);
             case "/track" -> handleTrack(chatId);
             case "/untrack" -> handleUntrack(chatId);
             case "/list" -> handleList(chatId);
-            default -> {
-                if(update.message().replyToMessage() != null) { handleRepliedMessage(update, chatId); }
-                else {
-                    sendMessage(chatId, "command " + update.message().text() + " was not found");
-                    sendMessage(chatId, HELP_MESSAGE);
-                }
-            }
+            default -> handleUnknownCmd(update, chatId);
         }
 
     }
@@ -78,6 +77,11 @@ public class TinkoffEduBot extends LongPollingBot{
                 .orElse("There is not links in your list"))
                 .disableWebPagePreview(true)
                 .parseMode(ParseMode.Markdown));
+    }
+
+    private void handleUnknownCmd(Update update, long chatId) {
+        sendMessage(chatId, "command " + update.message().text() + " was not found");
+        sendMessage(chatId, HELP_MESSAGE);
     }
 
     private void handleRepliedMessage(Update update, long chatId) {
