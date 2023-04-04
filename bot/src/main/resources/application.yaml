@@ -1,5 +1,9 @@
 app:
   test: "something"
+  botConfig:
+    name: "TinkoffEduKravchi88Bot"
+    token: ${BOT_TOKEN}
+
 
 springdoc:
   swagger-ui:
