@@ -4,7 +4,7 @@ import com.pengrad.telegrambot.UpdatesListener;
 import com.pengrad.telegrambot.request.SendMessage;
 
 public abstract class LongPollingBot implements UpdateHandler {
-    protected final TelegramBot bot;
+    protected TelegramBot bot;
     public LongPollingBot(String token) {
         this.bot = new TelegramBot(token);
         this.bot.setUpdatesListener(updates -> {

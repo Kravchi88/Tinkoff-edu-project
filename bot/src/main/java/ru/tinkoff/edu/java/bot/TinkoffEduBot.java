@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import ru.tinkoff.edu.java.bot.configuration.ApplicationConfig;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Component
@@ -23,7 +24,7 @@ public class TinkoffEduBot extends LongPollingBot{
                                 /untrack -- stop tracking the link
                                 /list -- show a list of tracked links""";
 
-    Map<Long, ArrayList<String>> usersLinks = new HashMap<>();
+    protected Map<Long, List<String>> usersLinks = new HashMap<>();
 
     public TinkoffEduBot(ApplicationConfig applicationConfig) { super(applicationConfig.botConfig().token()); }
 
@@ -52,24 +53,24 @@ public class TinkoffEduBot extends LongPollingBot{
         }
 
     }
-    private void handleStart(long chatId) {
+    protected void handleStart(long chatId) {
         usersLinks.put(chatId, new ArrayList<>());
         sendMessage(chatId, "You was successfully registered");
     }
 
-    private void handleHelp(long chatId) {
+    protected void handleHelp(long chatId) {
         sendMessage(chatId, HELP_MESSAGE);
     }
 
-    private void handleTrack(long chatId) {
+    protected void handleTrack(long chatId) {
         bot.execute(new SendMessage(chatId, TYPE_NEW_LINK_CMD).replyMarkup(new ForceReply(true)));
     }
 
-    private void handleUntrack(long chatId) {
+    protected void handleUntrack(long chatId) {
         bot.execute(new SendMessage(chatId, REMOVE_LINK_CMD).replyMarkup(new ForceReply(true)));
     }
 
-    private void handleList(long chatId) {
+    protected void handleList(long chatId) {
         bot.execute(new SendMessage(chatId, "Your links:\n"
                 + usersLinks.get(chatId).stream()
                 .map(link1 -> "\"`" + link1 + "`\"")
@@ -79,12 +80,12 @@ public class TinkoffEduBot extends LongPollingBot{
                 .parseMode(ParseMode.Markdown));
     }
 
-    private void handleUnknownCmd(Update update, long chatId) {
+    protected void handleUnknownCmd(Update update, long chatId) {
         sendMessage(chatId, "command " + update.message().text() + " was not found");
         sendMessage(chatId, HELP_MESSAGE);
     }
 
-    private void handleRepliedMessage(Update update, long chatId) {
+    protected void handleRepliedMessage(Update update, long chatId) {
         if (!usersLinks.containsKey(chatId)) {
             return;
         }
