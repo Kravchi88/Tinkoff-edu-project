@@ -1,4 +1,4 @@
-package ru.tinkoff.edu.java.bot.dto.request;
+package ru.tinkoff.edu.java.bot.dto.bot;
 
 import java.net.URL;
 import java.util.List;

@@ -9,15 +9,15 @@ import java.net.URL;
 
 public class Main {
     public static void main(String[] args) throws MalformedURLException {
+        /*String stringLink = "https://github.com/sanyarnd/tinkoff-java-course-2022/";
+        URL link = new URL(stringLink);*/
+    }
 
-        String stringLink = "https://github.com/sanyarnd/tinkoff-java-course-2022/";
-        URL link = new URL(stringLink);
-
+    public static LinkInfo parse(URL url){
         Handler handler1 = new GitHubHandler();
         Handler handler2 = new StackOverflowHandler();
 
         handler1.setSuccessor(handler2);
-        LinkInfo result = handler1.handleRequest(link);
-        System.out.println(result);
+        return handler1.handleRequest(url);
     }
 }
