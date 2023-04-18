@@ -16,6 +16,8 @@ CREATE TABLE IF NOT EXISTS users
 --changeset nvoxland:1
 CREATE TABLE IF NOT EXISTS users_and_links
 (
+    link_id bigint NOT NULL PRIMARY KEY,
+    chat_id bigint NOT NULL PRIMARY KEY,
     FOREIGN KEY (link_id) REFERENCES links (url_id),
     FOREIGN KEY (chat_id) REFERENCES users (user_id)
 );
